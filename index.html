@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html>
+<head>
+  <title>PolymerBluetoothCodelab</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  
+  <link rel="import" href="bower_components/paper-button/paper-button.html">
+  <link rel="import" href="bower_components/paper-toast/paper-toast.html">
+  <link rel="import" href="bower_components/platinum-bluetooth/platinum-bluetooth-device.html">
+  <link rel="import" href="bower_components/platinum-bluetooth/platinum-bluetooth-characteristic.html">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body unresolved>
+  <template is="dom-bind">
+    
+  <platinum-bluetooth-device services-filter='["battery_service"]'>
+    <platinum-bluetooth-characteristic
+        service="battery_service"
+        characteristic="battery_level"
+        value={{batteryLevel}}>
+    </platinum-bluetooth-characteristic>
+  </platinum-bluetooth-device>
+  
+  <section>
+    <paper-button raised>Get Battery</paper-button>
+  </section>
+  
+  <paper-toast text="{{computeCharacteristic(batteryLevel)}}"></paper-toast>
+  
+  </template>
+  
+  <script src="main.js"></script>
+</body>
+</html>
