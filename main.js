@@ -12,7 +12,7 @@ document.addEventListener('WebComponentsReady', function() {
 
       // Connect to the device and read battery level.
       var batteryLevel = batteryDevice.querySelector('platinum-bluetooth-characteristic');
-      return batteryLevel.read().then(function(value) {
+      return batteryLevel.read().then(function() {
         document.querySelector('paper-toast').show();
       });
 
