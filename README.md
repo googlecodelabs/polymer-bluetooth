@@ -1,4 +1,4 @@
 Polymer Bluetooth Codelab
 =========================
 
-See TODO for codelab instructions.
+See http://www.code-labs.io/codelabs/polymer-bluetooth for codelab instructions.
