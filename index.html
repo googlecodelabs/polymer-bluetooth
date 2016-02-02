@@ -14,6 +14,7 @@
   <link rel="import" href="bower_components/paper-toast/paper-toast.html">
 
   <link rel="import" href="bower_components/platinum-bluetooth/platinum-bluetooth-device.html">
+  <link rel="import" href="bower_components/platinum-bluetooth/platinum-bluetooth-service.html">
   <link rel="import" href="bower_components/platinum-bluetooth/platinum-bluetooth-characteristic.html">
 
   <link rel="stylesheet" href="styles.css">
@@ -22,11 +23,12 @@
   <template is="dom-bind">
 
   <platinum-bluetooth-device services-filter='["battery_service"]'>
-    <platinum-bluetooth-characteristic
-        service="battery_service"
-        characteristic="battery_level"
-        value={{batteryLevel}}>
-    </platinum-bluetooth-characteristic>
+    <platinum-bluetooth-service service="battery_service">
+      <platinum-bluetooth-characteristic
+          characteristic="battery_level"
+          value={{batteryLevel}}>
+      </platinum-bluetooth-characteristic>
+    </platinum-bluetooth-service>
   </platinum-bluetooth-device>
 
   <section>

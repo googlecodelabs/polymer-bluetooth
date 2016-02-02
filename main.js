@@ -25,6 +25,5 @@ document.addEventListener('WebComponentsReady', function() {
 
 var template = document.querySelector('template');
 template.computeCharacteristic = function(batteryLevel) {
-  var data = new DataView(batteryLevel);
-  return ('Battery Level is ' + data.getUint8(0) + '%');
+  return ('Battery Level is ' + batteryLevel.getUint8(0) + '%');
 };
